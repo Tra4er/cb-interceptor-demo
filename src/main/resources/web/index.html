@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <title>T</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-9"
+             style="padding-top:50px; padding-bottom:50px">
+            <h2 align="center">
+                <small>Приклад роботи блокування API</small>
+            </h2>
+            <hr/>
+            <div>
+                <div>Send requests by URL: /api?param=dell</div>
+                <button id="button-sendTenToDell" type="button"
+                        class="text-center btn btn-primary btn-block btn-lg">10 request</button>
+            </div>
+
+            <div>
+                <div>Send requests by URL: /api?param=hp</div>
+                <button id="button-sendTenToHP" type="button"
+                        class="text-center btn btn-primary btn-block btn-lg">10 request</button>
+            </div>
+            <hr/>
+            <div>Result:</div>
+            <div id="result">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        console.log("HERE")
+    });
+    $("#button-sendTenToDell").click(function(){
+        $.ajax({
+            url: 'http://localhost:8080/api?param=dell',
+            type: 'GET',
+            success: function(data) {
+                $("#result").text(data);
+                console.log("HERE")
+            },
+            error: function(e) {
+                //called when there is an error
+                //console.log(e.message);
+            }
+        });
+        // sendAjaxPost(form, '/api/groups', 'add-dialog');
+    });
+    $("#button-sendTenToHP").click(function(){
+        $.ajax({
+            url: 'http://localhost:8080/api?param=HP',
+            type: 'GET',
+            success: function(data) {
+                $("#result").text(data);
+            },
+            error: function(e) {
+                //called when there is an error
+                //console.log(e.message);
+            }
+        });
+        // sendAjaxPost(form, '/api/groups', 'add-dialog');
+    });
+
+</script>
+</body>
+</html>
