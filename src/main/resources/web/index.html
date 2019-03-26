@@ -9,6 +9,7 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
     <script src="./index.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
 
@@ -23,13 +24,18 @@
             <div>
                 <div>Send requests by URL: /api?param=dell</div>
                 <button id="button-sendTenToDell" type="button"
-                        class="text-center btn btn-primary btn-block btn-lg">10 request</button>
+                        class="text-center btn btn-primary btn-block btn-lg">Request</button>
             </div>
 
             <div>
                 <div>Send requests by URL: /api?param=hp</div>
                 <button id="button-sendTenToHP" type="button"
-                        class="text-center btn btn-primary btn-block btn-lg">10 request</button>
+                        class="text-center btn btn-primary btn-block btn-lg">Request</button>
+            </div>
+            <div>
+                <div>Send requests by URL: /api?param=hp</div>
+                <button id="button-exception" type="button"
+                        class="text-center btn btn-primary btn-block btn-lg">Exception URL</button>
             </div>
             <hr/>
             <div>Result:</div>
@@ -61,6 +67,20 @@
     $("#button-sendTenToHP").click(function(){
         $.ajax({
             url: 'http://localhost:8080/api?param=HP',
+            type: 'GET',
+            success: function(data) {
+                $("#result").text(data);
+            },
+            error: function(e) {
+                //called when there is an error
+                //console.log(e.message);
+            }
+        });
+        // sendAjaxPost(form, '/api/groups', 'add-dialog');
+    });
+    $("#button-exception").click(function(){
+        $.ajax({
+            url: 'http://localhost:8080/api/exception',
             type: 'GET',
             success: function(data) {
                 $("#result").text(data);
