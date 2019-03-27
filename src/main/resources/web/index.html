@@ -8,14 +8,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
-    <script src="./index.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-9"
+        <div class="col-md-12"
              style="padding-top:50px; padding-bottom:50px">
             <h2 align="center">
                 <small>Приклад роботи блокування API</small>
@@ -44,55 +43,6 @@
         </div>
     </div>
 </div>
-
-<script>
-    $(document).ready(function () {
-        console.log("HERE")
-    });
-    $("#button-sendTenToDell").click(function(){
-        $.ajax({
-            url: 'http://localhost:8080/api?param=dell',
-            type: 'GET',
-            success: function(data) {
-                $("#result").text(data);
-                console.log("HERE")
-            },
-            error: function(e) {
-                //called when there is an error
-                //console.log(e.message);
-            }
-        });
-        // sendAjaxPost(form, '/api/groups', 'add-dialog');
-    });
-    $("#button-sendTenToHP").click(function(){
-        $.ajax({
-            url: 'http://localhost:8080/api?param=HP',
-            type: 'GET',
-            success: function(data) {
-                $("#result").text(data);
-            },
-            error: function(e) {
-                //called when there is an error
-                //console.log(e.message);
-            }
-        });
-        // sendAjaxPost(form, '/api/groups', 'add-dialog');
-    });
-    $("#button-exception").click(function(){
-        $.ajax({
-            url: 'http://localhost:8080/api/exception',
-            type: 'GET',
-            success: function(data) {
-                $("#result").text(data);
-            },
-            error: function(e) {
-                //called when there is an error
-                //console.log(e.message);
-            }
-        });
-        // sendAjaxPost(form, '/api/groups', 'add-dialog');
-    });
-
-</script>
+<script src="index.js"></script>
 </body>
 </html>

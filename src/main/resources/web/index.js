@@ -1,21 +1,38 @@
 $(document).ready(function () {
-	console.log("HERE")
 });
-$( "#target" ).click(function() {
-	alert( "Handler for .click() called." );
-});
-$("#button-sendTenToHP").click(function(){
-	console.log("HERslakdjaslkdjslkdlskE");
+$("#button-sendTenToDell").click(function(){
 	$.ajax({
-		url: 'http://localhost:8080/api',
+		url: 'http://localhost:8080/api?param=dell',
 		type: 'GET',
 		success: function(data) {
-			console.log("HERE")
+			$("#result").text(data);
 		},
 		error: function(e) {
-			//called when there is an error
-			//console.log(e.message);
+			$("#result").text(e.responseJSON.message);
 		}
 	});
-	// sendAjaxPost(form, '/api/groups', 'add-dialog');
+});
+$("#button-sendTenToHP").click(function(){
+	$.ajax({
+		url: 'http://localhost:8080/api?param=HP',
+		type: 'GET',
+		success: function(data) {
+			$("#result").text(data);
+		},
+		error: function(e) {
+			$("#result").text(e.responseJSON.message);
+		}
+	});
+});
+$("#button-exception").click(function(){
+	$.ajax({
+		url: 'http://localhost:8080/api/exception',
+		type: 'GET',
+		success: function(data) {
+			$("#result").text(data);
+		},
+		error: function(e) {
+			$("#result").text(e.responseJSON.message);
+		}
+	});
 });
