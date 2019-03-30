@@ -20,7 +20,7 @@
         </h2>
         <hr/>
         <form id="form">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Змінити</button>
         </form>
 
     </div>
@@ -30,6 +30,22 @@
             <small>Генерація запитів</small>
         </h2>
         <hr/>
+        <div>Частота запитів</div>
+        <div class="input-group mb-3">
+            <input id="input-timer" type="text" class="form-control" placeholder="мілісекунди" aria-label="Частота" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button id="button-timer" class="btn btn-outline-secondary" type="button">Змінити</button>
+            </div>
+        </div>
+        <hr/>
+        <div>
+            <div>Одноразовий виклик</div>
+            <div class="btn-group">
+                <button id="button-request" type="button"
+                        class="btn btn-primary">Відправити запит
+                </button>
+            </div>
+        </div>
         <div>
             <div>Навантажити метод 1</div>
             <div class="btn-group">
@@ -71,7 +87,18 @@
         </h2>
         <hr/>
         <div>
-            TODO
+            <table class="table table-sm">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">code</th>
+                    <th scope="col">method</th>
+                    <th scope="col">message</th>
+                </tr>
+                </thead>
+                <tbody id="table-console">
+                </tbody>
+            </table>
+
         </div>
     </div>
 </div>
