@@ -2,7 +2,7 @@ $(document).ready(function () {
 });
 $("#button-sendTenToDell").click(function(){
 	$.ajax({
-		url: 'http://localhost:8080/api?param=dell',
+		url: 'http://localhost:8090/api?param=dell',
 		type: 'GET',
 		success: function(data) {
 			$("#result").text(data);
@@ -14,7 +14,7 @@ $("#button-sendTenToDell").click(function(){
 });
 $("#button-sendTenToHP").click(function(){
 	$.ajax({
-		url: 'http://localhost:8080/api?param=HP',
+		url: 'http://localhost:8090/api?param=HP',
 		type: 'GET',
 		success: function(data) {
 			$("#result").text(data);
@@ -26,7 +26,7 @@ $("#button-sendTenToHP").click(function(){
 });
 $("#button-exception").click(function(){
 	$.ajax({
-		url: 'http://localhost:8080/api/exception',
+		url: 'http://localhost:8090/api/exception',
 		type: 'GET',
 		success: function(data) {
 			$("#result").text(data);
