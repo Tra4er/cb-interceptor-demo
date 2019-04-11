@@ -38,6 +38,7 @@
                 height: auto;
             }
         }
+
         .loader {
             border: 16px solid #f3f3f3; /* Light grey */
             border-top: 16px solid #3498db; /* Blue */
@@ -48,8 +49,12 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
@@ -58,6 +63,15 @@
     <div class="row content">
         <div class="col-sm-3 sidenav">
             <h4>Сторінка адміністрування користувача</h4>
+            <div>
+                <label for="select-user">Оберіть користувача</label>
+                <select class="form-control" id="select-user">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+            </div>
+            <hr/>
             <ul class="nav nav-pills nav-stacked nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#profile">Редагування профілю</a></li>
                 <li><a data-toggle="tab" href="#transfer">Перерахування</a></li>
@@ -79,32 +93,40 @@
                 <div id="profile" class="tab-pane fade in active">
                     <h3>Параметри профілю</h3>
                     <div class="col-sm-6">
-                        <div class="input-group mb-3">
-                            <label>Ім'я</label>
-                            <input type="text" class="form-control" aria-describedby="basic-addon2">
-                        </div>
-                        <div class="input-group mb-3">
-                            <label>Прізвище</label>
-                            <input type="text" class="form-control" aria-describedby="basic-addon2">
-                        </div>
-                        <div class="input-group mb-3">
-                            <label>По батькові</label>
-                            <input type="text" class="form-control" aria-describedby="basic-addon2">
-                        </div>
-                        <button id="button-save-PIB" type="button"
-                                class="btn btn-primary">Зберегти ПІБ
-                        </button>
+                        <form id="form-pib">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Email address</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                            </div>
+                            <div class="input-group mb-3">
+                                <label>Ім'я</label>
+                                <input id="input-name" type="text" class="form-control" aria-describedby="basic-addon2">
+                            </div>
+                            <div class="input-group mb-3">
+                                <label>Прізвище</label>
+                                <input id="input-secondName" type="text" class="form-control"
+                                       aria-describedby="basic-addon2">
+                            </div>
+                            <div class="input-group mb-3">
+                                <label>По батькові</label>
+                                <input id="input-surname" type="text" class="form-control"
+                                       aria-describedby="basic-addon2">
+                            </div>
+                            <button id="button-save-PIB" type="submit" type="button"
+                                    class="btn btn-primary">Зберегти ПІБ
+                            </button>
+                        </form>
                     </div>
                     <div class="col-sm-6">
                         <div class="input-group mb-3">
                             <label>емейл</label>
-                            <input type="text" class="form-control" aria-describedby="basic-addon2">
+                            <input id="input-id" type="text" class="form-control" aria-describedby="basic-addon2">
                             <div class="alert alert-danger" role="alert">
                                 Емейл зайнятий
                             </div>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <input id="input-mailSubscriotion" class="form-check-input" type="checkbox" value="">
                             <label class="form-check-label" for="defaultCheck1">
                                 Щотижня
                             </label>

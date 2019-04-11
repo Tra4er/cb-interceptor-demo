@@ -27,9 +27,7 @@ $(document).ready(function () {
 
 $("#form").submit(function(e) {
     var inputs = $("#form :input");
-    console.log(inputs)
     e.preventDefault();
-    console.log("HERE")
     var request = {};
     inputs.each(function(index){
         if (index === 0)
