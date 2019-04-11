@@ -95,45 +95,43 @@
                     <div class="col-sm-6">
                         <form id="form-pib">
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Email address</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                            </div>
-                            <div class="input-group mb-3">
                                 <label>Ім'я</label>
-                                <input id="input-name" type="text" class="form-control" aria-describedby="basic-addon2">
+                                <input id="name" type="text" class="form-control" aria-describedby="basic-addon2">
                             </div>
-                            <div class="input-group mb-3">
+                            <div class="form-group">
                                 <label>Прізвище</label>
-                                <input id="input-secondName" type="text" class="form-control"
+                                <input id="secondName" type="text" class="form-control"
                                        aria-describedby="basic-addon2">
                             </div>
-                            <div class="input-group mb-3">
+                            <div class="form-group">
                                 <label>По батькові</label>
-                                <input id="input-surname" type="text" class="form-control"
+                                <input id="surname" type="text" class="form-control"
                                        aria-describedby="basic-addon2">
                             </div>
-                            <button id="button-save-PIB" type="submit" type="button"
+                            <button id="button-save-PIB" type="submit"
                                     class="btn btn-primary">Зберегти ПІБ
                             </button>
                         </form>
                     </div>
                     <div class="col-sm-6">
-                        <div class="input-group mb-3">
-                            <label>емейл</label>
-                            <input id="input-id" type="text" class="form-control" aria-describedby="basic-addon2">
-                            <div class="alert alert-danger" role="alert">
-                                Емейл зайнятий
+                        <form id="form-email">
+                            <div class="form-group">
+                                <label>емейл</label>
+                                <input id="email" type="text" placeholder="name@example.com" class="form-control"
+                                       aria-describedby="basic-addon2">
+                                <div id="email-err" hidden="hidden" class="alert alert-danger" role="alert">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-check">
-                            <input id="input-mailSubscriotion" class="form-check-input" type="checkbox" value="">
-                            <label class="form-check-label" for="defaultCheck1">
-                                Щотижня
-                            </label>
-                        </div>
-                        <button id="button-mail-subs" type="button"
-                                class="btn btn-primary">Увімкнути сповіщення
-                        </button>
+                            <div class="form-group">
+                                <input id="input-mailSubscriotion" class="form-check-input" type="checkbox" value="">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    Щотижня
+                                </label>
+                            </div>
+                            <button id="button-email" type="submit"
+                                    class="btn btn-primary">Увімкнути сповіщення
+                            </button>
+                        </form>
                     </div>
                 </div>
                 <div id="transfer" class="tab-pane fade">
@@ -180,46 +178,47 @@
                     </div>
                 </div>
                 <div id="document" class="tab-pane fade">
-                    <h3>Генерація документів</h3>
+                    <h3>Генерація звітів</h3>
                     <div class="col-sm-6">
-                        <div>Name surename</div>
+                        <div>Генерація звітів по:</div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <input class="form-check-input" type="checkbox" value="">
                             <label class="form-check-label" for="defaultCheck1">
-                                Щотижня
+                                грошовим надходженням
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <input class="form-check-input" type="checkbox" value="">
                             <label class="form-check-label" for="defaultCheck1">
-                                Щотижня
+                                грошовим переказам
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <input class="form-check-input" type="checkbox" value="">
                             <label class="form-check-label" for="defaultCheck1">
-                                Щотижня
+                                відправленим документам
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <input class="form-check-input" type="checkbox" value="">
                             <label class="form-check-label" for="defaultCheck1">
-                                Щотижня
+                                випискам
                             </label>
                         </div>
                         <div class="input-group mb-3">
                             <label>Оберіть систему</label>
                             <input type="text" class="form-control" aria-describedby="basic-addon2">
                         </div>
-                        <button id="button-send-data" type="button"
+                        <button id="button-docs" type="button"
                                 class="btn btn-primary">Відправити дані
                         </button>
                     </div>
                     <div class="col-sm-6">
-                        <div class="loader"></div>
+                        <div id="docs-loader" class="loader" hidden="hidden"></div>
                         <hr/>
                         <div>Результат:</div>
+                        <div id="docs-err" hidden="hidden" class="alert alert-danger" role="alert"></div>
                     </div>
                 </div>
                 <div id="menu3" class="tab-pane fade">
