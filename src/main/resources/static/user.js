@@ -1,5 +1,9 @@
 var userId = 1;
 
+var logResponse = function (response) {
+	$("#resultConsole").text(JSON.stringify(response));
+}
+
 $(document).ready(function () {
     $.ajax({
         url: 'http://localhost:8080/api/users',
@@ -14,23 +18,28 @@ $(document).ready(function () {
         error: function (e) {
             // $("#result").text(e.responseJSON.message);
         }
-    });
+    }).always(function(r) {
+		logResponse(r)
+	});
 });
 
 $("#select-user").change(function (e) {
-    var optionSelected = $("option:selected", this);
     userId = this.value;
 
     $.ajax({
         url: 'http://localhost:8080/api/users/' + userId,
         type: 'GET',
         success: function (data) {
-            $("#result").text(data);
+			$("#name:text").val(data.name);
+			$("#secondName:text").val(data.secondName);
+			$("#surname:text").val(data.surname);
+			$("#email:text").val(data.email);
         },
         error: function (e) {
-            $("#result").text(e.responseJSON.message);
         }
-    });
+    }).always(function(r) {
+		logResponse(r)
+	});
 });
 $("#form-pib").submit(function (e) {
     var inputs = $("#form-pib :input");
@@ -51,7 +60,9 @@ $("#form-pib").submit(function (e) {
         error: function (e) {
             $("#result").text(e.responseJSON.message);
         }
-    });
+    }).always(function(r) {
+		logResponse(r)
+	});
 });
 $("#form-email").submit(function (e) {
     var inputs = $("#form-email :input");
@@ -77,7 +88,9 @@ $("#form-email").submit(function (e) {
             $("#email-err").text(e.responseText);
             $("#email-err").removeAttr('hidden');
         }
-    });
+    }).always(function(r) {
+		logResponse(r)
+	});
 });
 
 $("#button-docs").click(function () {
@@ -94,5 +107,7 @@ $("#button-docs").click(function () {
             $("#docs-loader").attr('hidden', 'hidden');
             $("#docs-err").removeAttr('hidden');
         }
-    });
+    }).always(function(r) {
+		logResponse(r)
+	});
 });

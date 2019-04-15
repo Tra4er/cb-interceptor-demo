@@ -9,6 +9,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style>
+        #resultConsole {
+            width: 500px;
+            height: 50px;
+            border: 1px solid rgb(200, 200, 200);
+            position: fixed;
+            background: rgb(239, 231, 231);
+            bottom: 0;
+            right: 0;
+        }
         /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
         .row.content {
             height: 1500px
@@ -59,6 +68,9 @@
     </style>
 </head>
 <body>
+
+<div id="resultConsole">
+</div>
 <div class="container-fluid">
     <div class="row content">
         <div class="col-sm-3 sidenav">
@@ -140,27 +152,27 @@
                         <div>Name surename</div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <input class="form-check-input" type="checkbox" value="">
                             <label class="form-check-label" for="defaultCheck1">
-                                Щотижня
+                                Листування
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">
-                                Щотижня
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Звіти
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">
-                                Щотижня
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Пошта
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">
-                                Щотижня
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Роботи
                             </label>
                         </div>
                         <div class="input-group mb-3">
@@ -230,42 +242,7 @@
         </div>
     </div>
 </div>
-</div>
 
-<footer class="container-fluid">
-    <p>Footer Text</p>
-</footer>
-
-<!--<div class="row">-->
-<!--<div class="col-md-12"-->
-<!--style="padding-top:50px; padding-bottom:50px">-->
-<!--<h2 align="center">-->
-<!--<small>Сторінка адміністрування користувача</small>-->
-<!--</h2>-->
-<!--<hr/>-->
-<!--<div>-->
-<!--<div>Send requests by URL: /api?param=dell</div>-->
-<!--<button id="button-sendTenToDell" type="button"-->
-<!--class="text-center btn btn-primary btn-block btn-lg">Request</button>-->
-<!--</div>-->
-
-<!--<div>-->
-<!--<div>Send requests by URL: /api?param=hp</div>-->
-<!--<button id="button-sendTenToHP" type="button"-->
-<!--class="text-center btn btn-primary btn-block btn-lg">Request</button>-->
-<!--</div>-->
-<!--<div>-->
-<!--<div>Send requests by URL: /api?param=hp</div>-->
-<!--<button id="button-exception" type="button"-->
-<!--class="text-center btn btn-primary btn-block btn-lg">Exception URL</button>-->
-<!--</div>-->
-<!--<hr/>-->
-<!--<div>Result:</div>-->
-<!--<div id="result">-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
 <script src="user.js"></script>
 </body>
 </html>
