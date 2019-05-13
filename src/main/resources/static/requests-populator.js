@@ -70,7 +70,7 @@ var makeRequest = function (method) {
             }
         },
         error: function (e) {
-            addConsoleLog(null, method, e);
+            addConsoleLog(null, method, "500 - Server Error");
         }
     })
 }
